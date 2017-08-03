@@ -267,18 +267,18 @@ func (hc *Check) Run(start <-chan time.Time) {
 
 	// Wait for a tick to avoid a thundering herd at startup and to
 	// stagger healthchecks that have the same interval.
-	if start != nil {
-		<-start
-	}
-        log.Infof("Starting healthchecker for 0x%x (%s)", hc.Id, hc)
+        if start != nil {
+                <-start
+        }
+        log.Infof("Starting healthchecker for ID 0x%x (%s)", hc.Id, hc)
 
-	ticker := time.NewTicker(hc.Interval)
-	hc.healthcheck()
+        ticker := time.NewTicker(hc.Interval)
+        hc.healthcheck()
 	for {
 		select {
 		case <-hc.quit:
 			ticker.Stop()
-			log.Infof("Stopping healthchecker for %d (%s)", hc.Id, hc)
+                        log.Infof("Stopping healthchecker for ID 0x%x (%s)", hc.Id, hc)
 			return
 
 		case config := <-hc.update:
@@ -328,7 +328,7 @@ func (hc *Check) healthcheck() {
 	}
 
 	if hc.state == StateHealthy && hc.failed > 0 && hc.failed <= uint64(hc.Config.Retries) {
-		log.Infof("%d: Failure %d - retrying...", hc.Id, hc.failed)
+                log.Infof("ID 0x%x: Failure %d - retrying...", hc.Id, hc.failed)
 		state = StateHealthy
 	}
 	transition := (hc.state != state)
@@ -393,7 +393,7 @@ func (hc *Check) Update(config *Config) {
 	select {
 	case hc.update <- *config:
 	default:
-		log.Warningf("Unable to update %d (%s), last update still queued", hc.Id, hc)
+                log.Warningf("Unable to update ID 0x%x (%s), last update still queued", hc.Id, hc)
 	}
 }
 
