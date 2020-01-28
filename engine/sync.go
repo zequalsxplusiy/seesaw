@@ -30,7 +30,7 @@ import (
 	"github.com/google/seesaw/common/seesaw"
 	"github.com/google/seesaw/engine/config"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 // TODO(jsing): Consider implementing message authentication.

@@ -30,7 +30,7 @@ import (
 	"github.com/google/seesaw/healthcheck"
 	"github.com/kylelemons/godebug/pretty"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 const testDataDir = "testdata"

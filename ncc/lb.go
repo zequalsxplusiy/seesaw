@@ -27,7 +27,7 @@ import (
 	"github.com/google/seesaw/common/seesaw"
 	ncctypes "github.com/google/seesaw/ncc/types"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 const vrrpMAC = "00:00:5E:00:01:00"

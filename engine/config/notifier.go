@@ -28,8 +28,8 @@ import (
 	"github.com/google/seesaw/common/seesaw"
 	pb "github.com/google/seesaw/pb/config"
 
-	log "github.com/golang/glog"
 	"github.com/golang/protobuf/proto"
+	log "k8s.io/klog"
 )
 
 // Notifier monitors cluster configuration sources and sends Notifications via

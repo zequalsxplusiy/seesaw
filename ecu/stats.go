@@ -29,7 +29,7 @@ import (
 	"github.com/google/seesaw/common/seesaw"
 	"github.com/google/seesaw/quagga"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 // publisher implements an interface for a statistics publisher.

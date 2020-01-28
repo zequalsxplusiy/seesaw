@@ -26,7 +26,7 @@ import (
 	"github.com/google/seesaw/common/seesaw"
 	"github.com/google/seesaw/quagga"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 // SeesawECU provides the RPC interface to the Seesaw ECU.

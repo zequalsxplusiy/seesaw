@@ -28,7 +28,7 @@ import (
 	"syscall"
 	"time"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 const logDir = "/var/log/seesaw"

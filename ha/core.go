@@ -25,7 +25,7 @@ import (
 
 	"github.com/google/seesaw/common/seesaw"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 // HAConn represents an HA connection for sending and receiving advertisements between two Nodes.

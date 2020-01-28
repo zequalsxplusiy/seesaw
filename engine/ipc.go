@@ -27,7 +27,7 @@ import (
 	"github.com/google/seesaw/healthcheck"
 	"github.com/google/seesaw/quagga"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 func init() {

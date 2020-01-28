@@ -25,7 +25,7 @@ import (
 
 	"github.com/google/seesaw/quagga"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 // bgpManager contains the data necessary to run a BGP configuration manager.

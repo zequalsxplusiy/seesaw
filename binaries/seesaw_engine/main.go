@@ -26,11 +26,11 @@ import (
 
 	"github.com/google/seesaw/common/seesaw"
 	"github.com/google/seesaw/common/server"
-	"github.com/google/seesaw/engine/config"
 	"github.com/google/seesaw/engine"
+	"github.com/google/seesaw/engine/config"
 
 	conf "github.com/dlintw/goconf"
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 var (

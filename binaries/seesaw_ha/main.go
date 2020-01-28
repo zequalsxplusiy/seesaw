@@ -26,7 +26,7 @@ import (
 	"github.com/google/seesaw/common/server"
 	"github.com/google/seesaw/ha"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 var (

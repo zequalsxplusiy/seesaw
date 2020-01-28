@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"time"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 var restartBackoff = 5 * time.Second

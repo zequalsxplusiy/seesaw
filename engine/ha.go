@@ -26,7 +26,7 @@ import (
 
 	"github.com/google/seesaw/common/seesaw"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 // haManager manages the HA state for a seesaw engine.

@@ -31,8 +31,8 @@ import (
 
 	pb "github.com/google/seesaw/pb/config"
 
-	log "github.com/golang/glog"
 	"github.com/golang/protobuf/proto"
+	log "k8s.io/klog"
 )
 
 func init() {

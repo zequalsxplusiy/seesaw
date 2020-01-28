@@ -33,7 +33,7 @@ import (
 	"github.com/google/seesaw/ipvs"
 	ncclient "github.com/google/seesaw/ncc/client"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 const (

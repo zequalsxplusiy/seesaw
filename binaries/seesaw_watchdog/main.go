@@ -27,7 +27,7 @@ import (
 	"github.com/google/seesaw/watchdog"
 
 	conf "github.com/dlintw/goconf"
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 var (

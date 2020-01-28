@@ -25,7 +25,7 @@ import (
 	"github.com/google/seesaw/ipvs"
 	ncctypes "github.com/google/seesaw/ncc/types"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 var ipvsMutex sync.Mutex
@@ -88,28 +88,28 @@ func (ncc *SeesawNCC) IPVSAddService(svc *ipvs.Service, out *int) error {
 func (ncc *SeesawNCC) IPVSUpdateService(svc *ipvs.Service, out *int) error {
 	ipvsMutex.Lock()
 	defer ipvsMutex.Unlock()
-        return ipvs.UpdateService(*svc)
+	return ipvs.UpdateService(*svc)
 }
 
 // IPVSGetService gets the currently configured service from the IPVS table,
 // which matches the specified service.
 func (ncc *SeesawNCC) IPVSGetServiceData(si *ipvs.Service, out *ncctypes.IPVSServiceData) error {
-        ipvsMutex.Lock()
-        defer ipvsMutex.Unlock()
-        data, err := ipvs.GetServiceData(si)
-        if err != nil {
-                return err
-        }
-        out.Service = si
-        out.ServiceData = data
-        return nil
+	ipvsMutex.Lock()
+	defer ipvsMutex.Unlock()
+	data, err := ipvs.GetServiceData(si)
+	if err != nil {
+		return err
+	}
+	out.Service = si
+	out.ServiceData = data
+	return nil
 }
 
 // IPVSSetServiceData updates data for specific service in the IPVS table.
 func (ncc *SeesawNCC) IPVSSetServiceData(data *ncctypes.IPVSServiceData, out *int) error {
-        ipvsMutex.Lock()
-        defer ipvsMutex.Unlock()
-        return ipvs.SetServiceData(*data.Service, *data.ServiceData)
+	ipvsMutex.Lock()
+	defer ipvsMutex.Unlock()
+	return ipvs.SetServiceData(*data.Service, *data.ServiceData)
 }
 
 // IPVSDeleteService deletes the specified service from the IPVS table.

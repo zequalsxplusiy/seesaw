@@ -29,7 +29,7 @@ import (
 	ncctypes "github.com/google/seesaw/ncc/types"
 	"github.com/google/seesaw/quagga"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 type dummyNCC struct{}

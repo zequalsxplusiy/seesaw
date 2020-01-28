@@ -36,7 +36,7 @@ import (
 	ncclient "github.com/google/seesaw/ncc/client"
 	ncctypes "github.com/google/seesaw/ncc/types"
 
-	log "github.com/golang/glog"
+	log "k8s.io/klog"
 )
 
 const (
