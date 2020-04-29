@@ -168,6 +168,7 @@ func (nc *nccClient) call(name string, in interface{}, out interface{}) error {
 	start := time.Now()
 	defer func() {
 		metrics.RequestLatency.Observe(name, time.Since(start))
+		metrics.Requests.Increment(name)
 	}()
 	nc.lock.RLock()
 	client := nc.client
