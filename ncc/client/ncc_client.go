@@ -163,6 +163,12 @@ func (nc *nccClient) NewLBInterface(name string, cfg *ncctypes.LBConfig) LBInter
 
 // call performs an RPC call to the Seesaw v2 nccClient.
 func (nc *nccClient) call(name string, in interface{}, out interface{}) error {
+	//Metrics for total request latency
+	start := time.Now()
+	defer func() {
+		metrics.RequestLatency.Observe(name, time.Since(start))
+		metrics.Requests.Increment(name)
+	}()
 	nc.lock.RLock()
 	client := nc.client
 	nc.lock.RUnlock()
